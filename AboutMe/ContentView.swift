@@ -7,55 +7,61 @@
 
 import SwiftUI
 
+import SwiftUI
+
 struct ContentView: View {
     @State private var buttonText = "Tap for a fun fact"
-var body: some View {
+    
+    var body: some View {
         ZStack {
-            Color(red:248/255,green:200/255,blue:220/255 )
+            Color(red: 248/255, green: 200/255, blue: 220/255)
                 .ignoresSafeArea()
-        ScrollView {
-            VStack {
-            Text("All About Me!")
-                    .font(.title)
-                    .fontWeight(.medium)
-                    .foregroundColor(Color.red)
-            Image("cherryBlossoms")
-                    .resizable(resizingMode: .stretch)
-                    .aspectRatio(contentMode: .fit)
-                    .cornerRadius(15)
-                    .padding([.top, .leading, .trailing])
-                Text("My name is Jessica. Here is a picture of me in one of my favorite cities: Washington, DC! I love to visit the cherry blossoms with my friends.")
-                    .font(.caption)
-                    .multilineTextAlignment(.center)
-            Text("Welcome to my About Me app. I'm happy you're here!")
-                    .fontWeight(.bold)
-                    .foregroundColor(Color.red)
-                    .multilineTextAlignment(.center)
-                    .padding([.top, .leading, .bottom])
-            Button(buttonText) {
-                buttonText = "I have visited more than 10 different countries!"
-                                }
+            
+            ScrollView {
+                VStack(spacing: 20) {
+                    Text("All About Me!")
+                            .font(.title)
+                            .fontWeight(.medium)
+                            .foregroundColor(Color.red)
+                            .padding(.top)
+                    Image("cherryBlossoms")
+                            .resizable(resizingMode: .stretch)
+                            .aspectRatio(contentMode: .fit)
+                            .cornerRadius(15)
+                            .padding([.top, .leading, .trailing])
+                    Text("My name is Jessica. Here is a picture of me in one of my favorite cities: Washington, DC! I love to visit the cherry blossoms with my friends.")
+                            .font(.caption)
+                            .multilineTextAlignment(.center)
+                    Text("Welcome to my About Me app. I'm happy you're here!")
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.red)
+                            .multilineTextAlignment(.center)
+                            .padding([.top, .leading, .bottom])
+                    Button(buttonText) {
+                        buttonText = "I have visited more than 10 different countries!"
+                        }
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(15)
+                    Text("Here are some facts about me:")
+                    Text("My favorite color is pink.")
+                            .fontWeight(.heavy)
+                            .padding([.top, .leading, .trailing])
+                    Text("I have two younger siblings.")
+                            .fontWeight(.heavy)
+                    Text("I love to read.")
+                            .fontWeight(.heavy)
+                    Text("I have two adorable dogs.")
+                            .fontWeight(.heavy)
+                            .padding([.leading, .bottom, .trailing])
+                    }
                     .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(15)
-                Text("My favorite color is pink.")
-                    .fontWeight(.heavy)
-                .padding([.top, .leading, .trailing])
-                Text("I have two younger siblings.")
-                    .fontWeight(.heavy)
-                Text("I love to read.")
-                    .fontWeight(.heavy)
-                Text("I have two adorable dogs.")
-                    .fontWeight(.heavy)
-                    .padding([.leading, .bottom, .trailing])
                 }
-            .padding()
+                .scrollIndicators(.visible)
             }
         }
     }
-}
-
-#Preview {
-    ContentView()
-}
+    #Preview {
+        ContentView()
+    }
