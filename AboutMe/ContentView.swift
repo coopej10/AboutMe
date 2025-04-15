@@ -10,11 +10,11 @@ import SwiftUI
 struct ContentView: View {
     @State private var buttonText = "Tap for a fun fact"
 var body: some View {
-    ScrollView {
         ZStack {
             Color(red:248/255,green:200/255,blue:220/255 )
                 .ignoresSafeArea()
-        VStack {
+        ScrollView {
+            VStack {
             Text("All About Me!")
                     .font(.title)
                     .fontWeight(.medium)
@@ -34,7 +34,14 @@ var body: some View {
                     .padding()
                     .background(Color.blue)
                     .foregroundColor(.white)
+                    .cornerRadius(15)
+            Text("My favorite color is pink.")
+                .padding([.top, .leading, .trailing])
+            Text("I have two younger siblings.")
+            Text("I love to read.")
+            Text("I have two adorable dogs.")
                 }
+            .padding()
             }
         }
     }
