@@ -10,15 +10,20 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         ScrollView {
-            VStack {
-                Text("All About Me!")
-                    .font(.title)
-                    .fontWeight(.medium)
-                    .foregroundColor(Color.pink)
-                Image("cherryBlossoms")
-                    .resizable(resizingMode: .stretch)
-                    .aspectRatio(contentMode: .fit)
-                    .padding(.all)
+            ZStack {
+                Color(red:248/255,green:200/255,blue:220/255 )
+                .ignoresSafeArea()
+                VStack {
+                    Text("All About Me!")
+                        .font(.title)
+                        .fontWeight(.medium)
+                        .foregroundColor(Color.red)
+                    Image("cherryBlossoms")
+                        .resizable(resizingMode: .stretch)
+                        .aspectRatio(contentMode: .fit)
+                        .cornerRadius(15)
+                        .padding(.all)
+                }
             }
         }
     }
